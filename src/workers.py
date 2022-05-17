@@ -20,7 +20,7 @@ class CollectDataWorker(QtCore.QObject):
 
     def run(self):
         while self.running:
-            data = self.arduino.read()
+            data = self.arduino.read_data()
 
             # convert incoming data to list
             data = data.split(",")

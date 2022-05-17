@@ -44,7 +44,7 @@ class SerialPort:
             if descriptor in com.description:
                 return com[0]
 
-    def send(self, cmd: str):
+    def send_command(self, cmd: str):
         """Send bytearray to device"""
 
         # good practice to reset buffers before each transmission
@@ -54,7 +54,7 @@ class SerialPort:
         cmd = cmd + "\r"
         self.serial_port.write(cmd.encode())  # pass as bytearray
 
-    def read(self) -> str:
+    def read_data(self) -> str:
         """Read incoming data and decode"""
 
         return self.serial_port.readline().decode("utf-8", "ignore").strip()
@@ -83,5 +83,5 @@ class Arduino(SerialPort):
 
     def set_state(self, pump_speed, Sol1, Sol2, Sol3, Sol4):
         # self.flush()
-        self.send(pump_speed, Sol1, Sol2, Sol3, Sol4)
+        self.send_command(pump_speed, Sol1, Sol2, Sol3, Sol4)
         time.sleep(0.2)
