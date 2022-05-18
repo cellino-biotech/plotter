@@ -3,8 +3,8 @@ import sys
 import csv
 import numpy as np
 
-import qtmodern.styles
-import qtmodern.windows
+#import qtmodern.styles
+#import qtmodern.windows
 
 from PyQt5 import QtWidgets, QtCore, QtGui
 from pyqtgraph import PlotWidget
@@ -165,10 +165,10 @@ def main():
     app = QtWidgets.QApplication(sys.argv)
     win = MainWindow()
 
-    qtmodern.styles.dark(app)
+    #qtmodern.styles.dark(app)
 
-    main = qtmodern.windows.ModernWindow(win)
-    main.show()
+    #main = qtmodern.windows.ModernWindow(win)
+    win.show()
 
     sys.exit(app.exec())
 
