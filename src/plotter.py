@@ -47,7 +47,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.txt_display.setMaximumWidth(100)
 
         # only allow user to input integer data
-        self.txt_display.setValidator(QtGui.QIntValidator(10, 100))
+        self.txt_display.setValidator(QtGui.QIntValidator(0, 100))
 
         # connect the "clicked" signal to callback functions
         self.btn_start.clicked.connect(self.start_recording)
